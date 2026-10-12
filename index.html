@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AquaSave – An interactive water conservation recommendation system estimating household water usage and generating personalized conservation recommendations." />
+  <meta name="keywords" content="water conservation, water footprint calculator, eco score, environmental studies, sustainability, household water savings" />
+  <meta name="author" content="AquaSave Project" />
+  <title>AquaSave – Water Conservation Recommendation System</title>
+  <!-- Google Fonts: Wix Madefor Display & Wix Madefor Text (Exact font from reference) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@300;400;500;600;700;800&family=Wix+Madefor+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ==============================================================================
+       NAVIGATION BAR (Leah Webb Minimalist Editorial Style)
+       ============================================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" id="nav-brand-link">
+        <span>AQUA SAVE</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#calculator" class="nav-link">Calculator</a></li>
+        <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
+        <li><a href="#tracker" class="nav-link">Tracker</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#calculator" class="btn btn-outline-pill btn-sm" id="btn-nav-calculate">
+          <span>Calculate Usage</span>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==============================================================================
+       1. HERO SECTION (Exact Leah Webb Theme & Typography Layout)
+       ============================================================================== -->
+  <header class="hero-section" id="home">
+    <!-- Dynamic Ticker / Marquee Banner -->
+    <div class="hero-marquee-strip">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>AQUASAVE INTELLIGENCE</span>
+          <span class="marquee-separator">✦</span>
+          <span>ESTIMATE HOUSEHOLD WATER CONSUMPTION</span>
+          <span class="marquee-separator">✦</span>
+          <span>DATA-DRIVEN CONSERVATION</span>
+          <span class="marquee-separator">✦</span>
+          <span>SAVE UP TO 45% DOMESTIC WATER</span>
+          <span class="marquee-separator">✦</span>
+          <span>CPCB 135 L/DAY BENCHMARK</span>
+          <span class="marquee-separator">✦</span>
+          <span>SUSTAINABLE RESOURCE OPTIMIZATION</span>
+          <span class="marquee-separator">✦</span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          <span>AQUASAVE INTELLIGENCE</span>
+          <span class="marquee-separator">✦</span>
+          <span>ESTIMATE HOUSEHOLD WATER CONSUMPTION</span>
+          <span class="marquee-separator">✦</span>
+          <span>DATA-DRIVEN CONSERVATION</span>
+          <span class="marquee-separator">✦</span>
+          <span>SAVE UP TO 45% DOMESTIC WATER</span>
+          <span class="marquee-separator">✦</span>
+          <span>CPCB 135 L/DAY BENCHMARK</span>
+          <span class="marquee-separator">✦</span>
+          <span>SUSTAINABLE RESOURCE OPTIMIZATION</span>
+          <span class="marquee-separator">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container hero-container">
+      <!-- Main Split Hero: Giant Light Typography Left, Copy & Pill Outline Button Right -->
+      <div class="hero-split-row">
+        <div class="hero-left-headline">
+          <h1 class="hero-title">
+            Lead. Achieve.<br />
+            Succeed.
+          </h1>
+          <div class="hero-subtitle-tag">
+            <span>AQUASAVE · WATER INTELLIGENCE PLATFORM</span>
+          </div>
+        </div>
+
+        <div class="hero-right-content">
+          <p class="hero-description">
+            This is a space to welcome visitors to your site. Grab their attention with copy that clearly states what the site is about: calculating domestic water footprints, identifying hidden losses, and taking scientific action to conserve our freshwater ecosystems.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#calculator" class="btn btn-outline-pill" id="btn-hero-learn-more">
+              Learn More
+            </a>
+            <a href="#calculator" class="btn btn-primary-pill" id="btn-hero-calculate">
+              Calculate Usage
+            </a>
+            <button type="button" class="btn btn-outline-pill" id="btn-hero-demo-avg">
+              Load Demo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supporting Baseline Analytics & Benchmark Strip -->
+      <div class="hero-bottom-grid">
+        <div class="hero-stats-strip">
+          <div class="stat-item">
+            <span class="stat-number">135 L</span>
+            <span class="stat-label">CPCB Benchmark / Day</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">30%–45%</span>
+            <span class="stat-label">Typical Conserved Potential</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Offline & Private Prototype</span>
+          </div>
+        </div>
+
+        <div class="hero-card-display">
+          <div class="visual-header">
+            <span class="badge badge-subtle">
+              <span class="pulse-ring">●</span> Real-time Analysis
+            </span>
+            <span class="visual-subtext">Household Metric</span>
+          </div>
+
+          <div class="hero-metric-line">
+            <div class="sphere-metric" id="hero-sphere-val">142 L / Day</div>
+            <div class="sphere-label">Typical Domestic Baseline</div>
+          </div>
+
+          <div class="visual-preview-bars">
+            <div class="preview-bar-row">
+              <div class="preview-bar-labels">
+                <span>Showering</span>
+                <span>40%</span>
+              </div>
+              <div class="preview-bar-track">
+                <div class="preview-bar-fill" style="width: 40%;"></div>
+              </div>
+            </div>
+
+            <div class="preview-bar-row">
+              <div class="preview-bar-labels">
+                <span>Sanitation</span>
+                <span>25%</span>
+              </div>
+              <div class="preview-bar-track">
+                <div class="preview-bar-fill" style="width: 25%;"></div>
+              </div>
+            </div>
+
+            <div class="preview-bar-row">
+              <div class="preview-bar-labels">
+                <span>Kitchen & Dishes</span>
+                <span>20%</span>
+              </div>
+              <div class="preview-bar-track">
+                <div class="preview-bar-fill" style="width: 20%;"></div>
+              </div>
+            </div>
+
+            <div class="preview-bar-row">
+              <div class="preview-bar-labels">
+                <span>Laundry & Outdoor</span>
+                <span>15%</span>
+              </div>
+              <div class="preview-bar-track">
+                <div class="preview-bar-fill" style="width: 15%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================================================================
+       HOW AQUASAVE WORKS & 3-STEP PROCESS
+       ============================================================================== -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary section-tag">Methodology</span>
+        <h2 class="section-title">How AquaSave Works</h2>
+        <p class="section-subtitle">
+          Follow a simple three-step scientific framework to map your domestic water consumption and transition to high-efficiency conservation habits.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <span class="process-number">01</span>
+          <div class="process-icon-wrap">01</div>
+          <h3>1. Enter Daily Activities</h3>
+          <p>Input your typical daily habits across showering, kitchen taps, toilet flushes, laundry cycles, and outdoor watering in our guided calculator.</p>
+        </div>
+
+        <div class="process-card">
+          <span class="process-number">02</span>
+          <div class="process-icon-wrap">02</div>
+          <h3>2. Analyze Water Consumption</h3>
+          <p>The system computes your estimated daily, weekly, and monthly footprint with visual category breakdowns and identifies your primary usage driver.</p>
+        </div>
+
+        <div class="process-card">
+          <span class="process-number">03</span>
+          <div class="process-icon-wrap">03</div>
+          <h3>3. Get Tailored Recommendations</h3>
+          <p>Receive customized, prioritized water-saving recommendations with exact potential savings calculated in Litres/day and test what-if scenarios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================================================
+       2. WATER USAGE INPUT / CALCULATOR SECTION
+       ============================================================================== -->
+  <section class="section calculator-section" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary section-tag">Interactive Calculator</span>
+        <h2 class="section-title">Water Usage Estimator</h2>
+        <p class="section-subtitle">
+          Enter your approximate household activities. All calculations provide transparent, science-backed estimates for academic and conservation awareness.
+        </p>
+      </div>
+
+      <!-- Quick Preset Demo Strip for Evaluator / Viva Demonstration -->
+      <div class="calc-preset-strip">
+        <span class="calc-preset-label">Quick Presets for Demonstration:</span>
+        <button type="button" class="btn btn-sm btn-outline" id="preset-avg-btn">
+          <span>Average Household (~140 L/day)</span>
+        </button>
+        <button type="button" class="btn btn-sm btn-outline" id="preset-high-btn">
+          <span>High Consumption Household (~260 L/day)</span>
+        </button>
+        <button type="button" class="btn btn-sm btn-outline" id="preset-eco-btn">
+          <span>Eco-Conscious Household (~85 L/day)</span>
+        </button>
+      </div>
+
+      <!-- Error Validation Notice -->
+      <div class="form-error-banner" id="form-error-banner">
+        <span>!</span>
+        <span id="form-error-text">Please enter valid positive values for all required activity inputs.</span>
+      </div>
+
+      <form id="water-calc-form" novalidate>
+        <div class="calc-grid">
+          
+          <!-- Card 1: Bathroom Activities -->
+          <div class="calc-card">
+            <div class="calc-card-header">
+              <div class="calc-card-icon">B</div>
+              <div>
+                <h3 class="calc-card-title">Bathroom Usage</h3>
+                <p class="calc-card-subtitle">Showers, personal hygiene & vanity taps</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="showersPerDay">
+                <span>Number of showers per day</span>
+                <span class="form-hint">Typical: 1–2 showers</span>
+              </label>
+              <div class="input-with-unit">
+                <input type="number" id="showersPerDay" name="showersPerDay" class="form-input" min="0" max="10" step="1" value="1" required />
+                <span class="input-unit">showers/day</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="showerDuration">
+                <span>Average shower duration</span>
+                <span class="form-hint">Standard flow: ~9.5 L/min</span>
+              </label>
+              <div class="input-with-unit">
+                <input type="number" id="showerDuration" name="showerDuration" class="form-input" min="0" max="60" step="1" value="8" required />
+                <span class="input-unit">minutes</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="bathroomTapUses">
+                <span>Bathroom tap usage frequency</span>
+                <span class="form-hint">Handwashing, brushing teeth, grooming</span>
+              </label>
+              <div class="input-with-unit">
+                <input type="number" id="bathroomTapUses" name="bathroomTapUses" class="form-input" min="0" max="50" step="1" value="5" required />
+                <span class="input-unit">times/day</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Toilet & Sanitation -->
+          <div class="calc-card">
+            <div class="calc-card-header">
+              <div class="calc-card-icon">T</div>
+              <div>
+                <h3 class="calc-card-title">Sanitation & Toilet</h3>
+                <p class="calc-card-subtitle">Flushing frequency & cistern mechanism</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="toiletFlushes">
+                <span>Approximate toilet flushes per day</span>
+                <span class="form-hint">Average: 4–6 flushes</span>
+              </label>
+              <div class="input-with-unit">
+                <input type="number" id="toiletFlushes" name="toiletFlushes" class="form-input" min="0" max="30" step="1" value="5" required />
+                <span class="input-unit">flushes/day</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="toiletType">
+                <span>Toilet flush mechanism</span>
+                <span class="form-hint">Standard uses ~9L; Dual-flush ~4.5L</span>
+              </label>
+              <select id="toiletType" name="toiletType" class="form-select">
+                <option value="standard" selected>Standard Single-Flush Cistern (~9 Litres)</option>
+                <option value="dual">Dual-Flush / Water-Saving Cistern (~4.5 Litres)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Card 3: Kitchen & Dishes -->
+          <div class="calc-card">
+            <div class="calc-card-header">
+              <div class="calc-card-icon">K</div>
+              <div>
+                <h3 class="calc-card-title">Kitchen & Dishwashing</h3>
+                <p class="calc-card-subtitle">Cooking, food rinsing & dish cleaning</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="kitchenTapMinutes">
+                <span>Kitchen tap runtime for cooking/rinsing</span>
+                <span class="form-hint">Flow rate: ~8.0 L/min</span>
+              </label>
+              <div class="input-with-unit">
+                <input type="number" id="kitchenTapMinutes" name="kitchenTapMinutes" class="form-input" min="0" max="120" step="1" value="6" required />
+                <span class="input-unit">minutes/day</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="dishwashingMethod">
+                <span>Primary dishwashing method</span>
+                <span class="form-hint">Running tap vs Basin soaking vs Dishwasher</span>
+              </label>
+              <select id="dishwashingMethod" name="dishwashingMethod" class="form-select">
+                <option value="running_tap" selected>Continuous Running Tap (~60 L/day)</option>
+                <option value="basin">Two-Basin / Soaking Sink (~20 L/day)</option>
+                <option value="dishwasher">Efficient Dishwasher (~12 L/day)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Card 4: Laundry & Clothes -->
+          <div class="calc-card">
+            <div class="calc-card-header">
+              <div class="calc-card-icon">L</div>
+              <div>
+                <h3 class="calc-card-title">Laundry & Washing</h3>
+                <p class="calc-card-subtitle">Machine cycles and manual clothes washing</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="washingMachineLoadsWeek">
+                <span>Washing machine loads per week</span>
+                <span class="form-hint">Average: ~50 Litres per cycle</span>
+              </label>
+              <div class="input-with-unit">
+                <input type="number" id="washingMachineLoadsWeek" name="washingMachineLoadsWeek" class="form-input" min="0" max="30" step="1" value="3" required />
+                <span class="input-unit">loads/week</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="handwashSessionsWeek">
+                <span>Hand-washing clothes frequency</span>
+                <span class="form-hint">Average: ~35 Litres per session</span>
+              </label>
+              <div class="input-with-unit">
+                <input type="number" id="handwashSessionsWeek" name="handwashSessionsWeek" class="form-input" min="0" max="30" step="1" value="1" required />
+                <span class="input-unit">sessions/week</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Outdoor & Gardening -->
+          <div class="calc-card">
+            <div class="calc-card-header">
+              <div class="calc-card-icon">G</div>
+              <div>
+                <h3 class="calc-card-title">Garden & Plant Care</h3>
+                <p class="calc-card-subtitle">Lawn, potted plants & landscaping</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span>Do you water plants or garden?</span>
+              </label>
+              <div class="toggle-group">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="hasGarden" name="hasGarden" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label-text" id="hasGardenText">Yes, household waters plants</span>
+              </div>
+            </div>
+
+            <div class="conditional-subgroup" id="garden-options-group">
+              <div class="form-group">
+                <label class="form-label" for="gardenWateringWeek">
+                  <span>Watering frequency</span>
+                  <span class="form-hint">Times per week</span>
+                </label>
+                <div class="input-with-unit">
+                  <input type="number" id="gardenWateringWeek" name="gardenWateringWeek" class="form-input" min="0" max="21" step="1" value="4" />
+                  <span class="input-unit">times/week</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="gardenMethod">
+                  <span>Watering method</span>
+                </label>
+                <select id="gardenMethod" name="gardenMethod" class="form-select">
+                  <option value="hose" selected>Open Hosepipe (~45 Litres/session)</option>
+                  <option value="can_drip">Watering Can / Drip Irrigation (~12 Litres/session)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Vehicles & Plumbing Leaks -->
+          <div class="calc-card">
+            <div class="calc-card-header">
+              <div class="calc-card-icon">V</div>
+              <div>
+                <h3 class="calc-card-title">Vehicles & Leaks</h3>
+                <p class="calc-card-subtitle">Car/bike wash & domestic plumbing condition</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="carWashesMonth">
+                <span>Vehicle washes per month</span>
+                <span class="form-hint">Cars, motorcycles or scooters</span>
+              </label>
+              <div class="input-with-unit">
+                <input type="number" id="carWashesMonth" name="carWashesMonth" class="form-input" min="0" max="30" step="1" value="2" />
+                <span class="input-unit">washes/month</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="carWashMethod">
+                <span>Vehicle wash method</span>
+              </label>
+              <select id="carWashMethod" name="carWashMethod" class="form-select">
+                <option value="hose" selected>Running Hosepipe (~120 Litres/wash)</option>
+                <option value="bucket">Bucket & Sponge (~30 Litres/wash)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span>Any dripping taps or minor leaks?</span>
+              </label>
+              <div class="toggle-group">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="hasLeaks" name="hasLeaks" />
+                  <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label-text" id="hasLeaksText">No leaks reported</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Action Controls -->
+        <div class="calc-actions">
+          <button type="submit" class="btn btn-primary btn-large" id="btn-submit-calc">
+            <span>Calculate My Water Usage</span>
+          </button>
+          <button type="button" class="btn btn-outline" id="btn-reset-form">
+            <span>↺ Reset Form</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==============================================================================
+       3. WATER CONSUMPTION RESULTS DASHBOARD
+       ============================================================================== -->
+  <section class="section results-section" id="results">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-emerald section-tag">Calculation Output</span>
+        <h2 class="section-title">Your Water Consumption Dashboard</h2>
+        <p class="section-subtitle">
+          Based on your activity profile, here is your estimated household water footprint breakdown and conservation standing.
+        </p>
+      </div>
+
+      <!-- Prominent Results Hero Card -->
+      <div class="results-hero-card">
+        <div class="results-hero-grid">
+          <div>
+            <div class="results-hero-title-badge">
+              Estimated Daily Footprint
+            </div>
+            <div class="results-hero-metric">
+              <span id="res-daily-val">0</span> <span>Litres / Day</span>
+            </div>
+            <div class="results-status-pill" id="res-status-pill">
+              <span id="res-status-dot">●</span>
+              <span id="res-status-title">Evaluating...</span>
+            </div>
+            <p class="results-status-desc" id="res-status-desc">
+              Your estimated water consumption is currently being evaluated against municipal standards.
+            </p>
+          </div>
+
+          <div class="results-time-projections">
+            <div class="projection-card">
+              <div class="projection-label">Weekly Consumption</div>
+              <div class="projection-value" id="res-weekly-val">0 L</div>
+              <span style="font-size: 0.75rem; opacity: 0.8;">7-Day Total</span>
+            </div>
+
+            <div class="projection-card">
+              <div class="projection-label">Monthly Consumption</div>
+              <div class="projection-value" id="res-monthly-val">0 L</div>
+              <span style="font-size: 0.75rem; opacity: 0.8;">30-Day Estimated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highest Water Consuming Activity Alert Banner -->
+      <div class="highest-usage-banner" id="highest-usage-banner">
+        <div class="highest-usage-left">
+          <div class="highest-usage-icon" id="highest-icon"></div>
+          <div>
+            <h4 class="highest-usage-title" id="highest-title">Your biggest water usage area is Showering.</h4>
+            <p class="highest-usage-text" id="highest-text">
+              Consuming approximately 76.0 Litres/day (48% of your overall consumption).
+            </p>
+          </div>
+        </div>
+        <a href="#recommendations" class="btn btn-sm btn-outline" style="background: #fff; color: #92400e; border-color: #fde68a;">
+          <span>Target This Area</span> <span>→</span>
+        </a>
+      </div>
+
+      <!-- Visual Breakdown: SVG Segmented Donut Chart + Detailed Activity Bars -->
+      <div class="breakdown-grid">
+        <!-- Interactive Donut Chart Card -->
+        <div class="breakdown-card">
+          <h3 class="breakdown-card-title">
+            <span>Visual Activity Share</span>
+            <span class="badge badge-primary">Percentage</span>
+          </h3>
+
+          <div class="donut-chart-wrap">
+            <svg class="donut-chart-svg" viewBox="0 0 220 220" id="donut-svg">
+              <circle cx="110" cy="110" r="90" fill="none" stroke="#e2e8f0" stroke-width="26"></circle>
+              <!-- Segments injected dynamically via JavaScript -->
+              <g id="donut-segments-group"></g>
+            </svg>
+            <div class="donut-center-text">
+              <div class="donut-center-val" id="donut-total-val">0 L</div>
+              <div class="donut-center-sub">Daily Total</div>
+            </div>
+
+            <div class="donut-legend" id="donut-legend">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Category Bars Card -->
+        <div class="breakdown-card">
+          <h3 class="breakdown-card-title">
+            <span>Consumption by Category</span>
+            <span class="badge badge-emerald">Litres / Day</span>
+          </h3>
+
+          <div class="category-bars-list" id="category-bars-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Navigation Toolbar -->
+      <div class="calc-actions" style="margin-top: 2rem;">
+        <a href="#recommendations" class="btn btn-emerald" id="btn-to-recs">
+          <span>Explore Personalized Recommendations</span>
+
+        </a>
+        <a href="#simulator" class="btn btn-outline" id="btn-to-sim">
+          <span>Test What-If Simulator</span>
+
+        </a>
+        <button type="button" class="btn btn-outline" id="btn-save-progress">
+          <span>Save to Progress Tracker</span>
+
+        </button>
+        <a href="#calculator" class="btn btn-outline" id="btn-calc-again">
+          <span>↺ Calculate Again</span>
+        </a>
+      </div>
+
+      <!-- Scientific Disclaimer -->
+      <div class="academic-disclaimer">
+        <span>i</span>
+        <div>
+          <strong>Disclaimer:</strong>
+          All consumption figures provided in AquaSave are mathematical estimates based on empirical benchmarks from CPCB and US EPA WaterSense. Real-world consumption may vary depending on household water pressure, pipe diameter, and specific appliance models.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================================================
+       4. PERSONALIZED RECOMMENDATIONS SECTION (CORE FEATURE)
+       ============================================================================== -->
+  <section class="section recommendations-section" id="recommendations">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-emerald section-tag">Core Feature</span>
+        <h2 class="section-title">Personalized Water-Saving Recommendations</h2>
+        <p class="section-subtitle">
+          Dynamically tailored advice generated directly from your entered activities. Each recommendation addresses a specific inefficiency and computes quantifiable daily savings.
+        </p>
+      </div>
+
+      <!-- Total Potential Savings Summary Banner -->
+      <div class="recs-summary-strip">
+        <div class="recs-summary-left">
+          <div class="recs-summary-icon">+</div>
+          <div>
+            <h3 class="recs-summary-title">High-Impact Optimization Opportunities</h3>
+            <p class="recs-summary-text">By adopting these practical recommendations, your household can achieve:</p>
+          </div>
+        </div>
+
+        <div class="recs-total-stat">
+          <span class="num" id="recs-total-saved-val">0</span>
+          <span class="unit">Litres Saved / Day</span>
+          <span style="font-size: 0.85rem; color: var(--emerald-dark); font-weight: 700; margin-left: 0.5rem;" id="recs-annual-stat">
+            (~0 L / Year)
+          </span>
+        </div>
+      </div>
+
+      <!-- Dynamic Recommendations Grid -->
+      <div class="recs-grid" id="recs-grid">
+        <!-- Injected via JavaScript based on user behavior -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================================================
+       5. WATER SAVINGS SIMULATOR SECTION ("SEE HOW MUCH YOU CAN SAVE")
+       ============================================================================== -->
+  <section class="section simulator-section" id="simulator">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary section-tag">Interactive What-If Engine</span>
+        <h2 class="section-title">Water Savings Simulator</h2>
+        <p class="section-subtitle">
+          Slide and toggle hypothetical lifestyle adjustments to simulate your potential water savings in real time.
+        </p>
+      </div>
+
+      <div class="simulator-grid">
+        <!-- Controls Card -->
+        <div class="simulator-controls-card">
+          <!-- Slider 1: Target Shower Duration -->
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <span class="sim-slider-label">
+                Shower Duration Target
+              </span>
+              <span class="sim-slider-val" id="sim-val-shower">5 min</span>
+            </div>
+            <input type="range" class="custom-range" id="sim-range-shower" min="3" max="15" step="1" value="5" />
+            <span class="form-hint">Standard recommended target: 5 minutes</span>
+          </div>
+
+          <!-- Slider 2: Washing Machine Optimization -->
+          <div class="sim-slider-group">
+            <div class="sim-slider-header">
+              <span class="sim-slider-label">
+                Washing Machine Cycles / Week
+              </span>
+              <span class="sim-slider-val" id="sim-val-laundry">2 loads</span>
+            </div>
+            <input type="range" class="custom-range" id="sim-range-laundry" min="1" max="10" step="1" value="2" />
+            <span class="form-hint">Consolidate partial loads into full loads</span>
+          </div>
+
+          <!-- Toggle 1: Dishwashing Method -->
+          <div class="sim-toggle-row">
+            <div class="sim-toggle-info">
+              <span class="sim-toggle-title">Switch to Two-Basin Dishwashing</span>
+              <span class="sim-toggle-desc">Replace running tap with soaking & rinse basins</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="sim-toggle-dish" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <!-- Toggle 2: Dual Flush Conversion -->
+          <div class="sim-toggle-row">
+            <div class="sim-toggle-info">
+              <span class="sim-toggle-title">Convert Toilet to Dual-Flush</span>
+              <span class="sim-toggle-desc">Install dual flush valve or displacement bottle</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="sim-toggle-toilet" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <!-- Toggle 3: Efficient Garden Watering -->
+          <div class="sim-toggle-row">
+            <div class="sim-toggle-info">
+              <span class="sim-toggle-title">Use Watering Can / Drip for Plants</span>
+              <span class="sim-toggle-desc">Replace open hosepipe with targeted can</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="sim-toggle-garden" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <!-- Toggle 4: Fix All Minor Leaks -->
+          <div class="sim-toggle-row">
+            <div class="sim-toggle-info">
+              <span class="sim-toggle-title">Repair All Household Dripping Taps</span>
+              <span class="sim-toggle-desc">Eliminate plumbing leak loss immediately</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="sim-toggle-leaks" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Simulator Dynamic Results Panel -->
+        <div class="simulator-results-panel">
+          <h3 class="sim-results-title">Simulation Summary</h3>
+
+          <div class="sim-comparison-flow">
+            <div class="sim-flow-step">
+              <div class="sim-flow-label">Current Usage</div>
+              <div class="sim-flow-val" id="sim-current-val">185 L</div>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">per day</span>
+            </div>
+
+            <div class="sim-flow-arrow">➔</div>
+
+            <div class="sim-flow-step">
+              <div class="sim-flow-label">After Improvements</div>
+              <div class="sim-flow-val" style="color: var(--emerald-dark);" id="sim-potential-val">120 L</div>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">per day</span>
+            </div>
+          </div>
+
+          <div class="sim-highlight-card">
+            <div class="sim-highlight-label">Potential Water Saved</div>
+            <div class="sim-highlight-val" id="sim-saved-val">65.0 L</div>
+            <div class="sim-highlight-percent" id="sim-saved-percent">35% Reduction</div>
+          </div>
+
+          <div class="sim-equivalents">
+            <div class="sim-equiv-item">
+              <span class="sim-equiv-icon">—</span>
+              <div>
+                <strong><span id="sim-equiv-buckets">4</span> Buckets of Water</strong> saved every single day.
+              </div>
+            </div>
+
+            <div class="sim-equiv-item">
+              <span class="sim-equiv-icon">—</span>
+              <div>
+                <strong><span id="sim-equiv-bottles">455</span> 1-Litre Drinking Bottles</strong> saved each week.
+              </div>
+            </div>
+
+            <div class="sim-equiv-item">
+              <span class="sim-equiv-icon">—</span>
+              <div>
+                Nourishes approx. <strong><span id="sim-equiv-trees">65</span> Young Trees</strong> for an entire month!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================================================
+       6. AQUASAVE ECO SCORE (0–100)
+       ============================================================================== -->
+  <section class="section score-section" id="eco-score">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-emerald section-tag">Awareness Metric</span>
+        <h2 class="section-title">AquaSave Eco Score</h2>
+        <p class="section-subtitle">
+          An application-generated efficiency rating from 0 to 100 based on your household's water consumption patterns.
+        </p>
+      </div>
+
+      <div class="score-grid">
+        <!-- Circular Progress Gauge Card -->
+        <div class="score-gauge-card">
+          <div class="gauge-circle-wrap">
+            <svg class="gauge-svg" viewBox="0 0 200 200">
+              <circle class="gauge-bg-circle" cx="100" cy="100" r="90"></circle>
+              <circle class="gauge-progress-circle" id="gauge-circle" cx="100" cy="100" r="90"></circle>
+            </svg>
+            <div class="gauge-inner-content">
+              <div class="gauge-number" id="gauge-score-val">78</div>
+              <div class="gauge-max">/ 100</div>
+            </div>
+          </div>
+
+          <div class="gauge-grade-badge badge-emerald" id="gauge-grade">Grade A</div>
+          <h3 class="gauge-verdict" id="gauge-verdict">Water Conservation Champion</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); max-width: 320px;">
+            Calculated across five domestic lifestyle efficiency categories.
+          </p>
+        </div>
+
+        <!-- Sub-score Breakdown Bars -->
+        <div class="score-details-panel">
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Score Component Breakdown</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Explore which specific domestic areas earned points and where conservation improvements can elevate your score:
+          </p>
+
+          <div class="subscore-item">
+            <div class="subscore-header">
+              <span>Shower Efficiency</span>
+              <span id="sub-shower-val">20 / 25 pts</span>
+            </div>
+            <div class="subscore-track">
+              <div class="subscore-fill" id="sub-shower-fill" style="width: 80%; background: #0284c7;"></div>
+            </div>
+          </div>
+
+          <div class="subscore-item">
+            <div class="subscore-header">
+              <span>Toilet & Sanitation</span>
+              <span id="sub-toilet-val">15 / 20 pts</span>
+            </div>
+            <div class="subscore-track">
+              <div class="subscore-fill" id="sub-toilet-fill" style="width: 75%; background: #0ea5e9;"></div>
+            </div>
+          </div>
+
+          <div class="subscore-item">
+            <div class="subscore-header">
+              <span>Kitchen & Dishwashing</span>
+              <span id="sub-kitchen-val">14 / 20 pts</span>
+            </div>
+            <div class="subscore-track">
+              <div class="subscore-fill" id="sub-kitchen-fill" style="width: 70%; background: #10b981;"></div>
+            </div>
+          </div>
+
+          <div class="subscore-item">
+            <div class="subscore-header">
+              <span>Laundry Efficiency</span>
+              <span id="sub-laundry-val">12 / 15 pts</span>
+            </div>
+            <div class="subscore-track">
+              <div class="subscore-fill" id="sub-laundry-fill" style="width: 80%; background: #8b5cf6;"></div>
+            </div>
+          </div>
+
+          <div class="subscore-item">
+            <div class="subscore-header">
+              <span>Outdoor & Leak Prevention</span>
+              <span id="sub-outdoor-val">17 / 20 pts</span>
+            </div>
+            <div class="subscore-track">
+              <div class="subscore-fill" id="sub-outdoor-fill" style="width: 85%; background: #059669;"></div>
+            </div>
+          </div>
+
+          <div class="academic-disclaimer" style="margin-top: 1rem;">
+            <span>i</span>
+            <div>
+              <strong>Note:</strong> The AquaSave Eco Score is a metric designed to cultivate conservation awareness. It does not constitute an official governmental rating.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================================================
+       7. PROGRESS TRACKER SECTION (LOCALSTORAGE)
+       ============================================================================== -->
+  <section class="section tracker-section" id="tracker">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-primary section-tag">Historical Tracking</span>
+        <h2 class="section-title">Your Water Conservation Journey</h2>
+        <p class="section-subtitle">
+          Save your calculation entries locally using browser storage to track your water reduction progress over time.
+        </p>
+      </div>
+
+      <!-- Metrics Cards -->
+      <div class="tracker-metrics-grid">
+        <div class="tracker-metric-card">
+          <div class="title">Current Daily Usage</div>
+          <div class="value" id="track-current-val">0 L</div>
+          <div class="sub" style="color: var(--primary);">Latest Assessment</div>
+        </div>
+
+        <div class="tracker-metric-card">
+          <div class="title">Previous Usage</div>
+          <div class="value" id="track-prev-val">0 L</div>
+          <div class="sub" style="color: var(--text-muted);">Baseline Benchmark</div>
+        </div>
+
+        <div class="tracker-metric-card">
+          <div class="title">Water Saved</div>
+          <div class="value" id="track-saved-val">0 L</div>
+          <div class="sub" style="color: var(--emerald-dark);" id="track-saved-sub">0% Net Change</div>
+        </div>
+
+        <div class="tracker-metric-card">
+          <div class="title">Logged Entries</div>
+          <div class="value" id="track-count-val">0</div>
+          <div class="sub" style="color: var(--text-muted);">Saved Locally</div>
+        </div>
+      </div>
+
+      <!-- Motivational Progress Message Banner -->
+      <div class="motivational-banner" id="motivational-banner">
+        <div class="motivational-icon">→</div>
+        <div class="motivational-text">
+          <h4 id="motivational-title">Start Your Water Conservation Journey</h4>
+          <p id="motivational-desc">Calculate your usage and click "Save to Progress Tracker" to begin tracking your conservation progress.</p>
+        </div>
+      </div>
+
+      <!-- History Table Card -->
+      <div class="tracker-log-card" style="margin-top: 2rem;">
+        <div class="tracker-log-header">
+          <h3 style="font-size: 1.2rem; font-weight: 700;">Assessment History</h3>
+          <div style="display: flex; gap: 0.75rem;">
+            <button type="button" class="btn btn-sm btn-outline" id="btn-save-current-log">
+              <span>+ Save Current</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline" id="btn-clear-tracker" style="color: var(--danger); border-color: var(--danger-border);">
+              <span>Clear History</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="tracker-table-wrap">
+          <table class="tracker-table" id="tracker-table">
+            <thead>
+              <tr>
+                <th>Date & Time</th>
+                <th>Daily Usage</th>
+                <th>Weekly Projection</th>
+                <th>Highest Area</th>
+                <th>Eco Score</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="tracker-tbody">
+              <!-- Rendered via JavaScript -->
+            </tbody>
+          </table>
+          <div class="tracker-empty" id="tracker-empty">
+            <div class="tracker-empty-icon">—</div>
+            <p>No assessments saved yet. Calculate your water usage and save it to begin your conservation journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================================================
+       8. WATER-SAVING TIPS & DID YOU KNOW SECTION
+       ============================================================================== -->
+  <section class="section tips-section" id="tips">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge-emerald section-tag">Educational Knowledge</span>
+        <h2 class="section-title">Water-Saving Tips & Facts</h2>
+        <p class="section-subtitle">
+          Explore practical, evidence-based water efficiency tips across household categories and grounded environmental facts.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="tips-tab-bar" id="tips-tabs">
+        <button type="button" class="tips-tab-btn active" data-category="all">All Tips</button>
+        <button type="button" class="tips-tab-btn" data-category="bathroom">Bathroom</button>
+        <button type="button" class="tips-tab-btn" data-category="kitchen">Kitchen</button>
+        <button type="button" class="tips-tab-btn" data-category="laundry">Laundry</button>
+        <button type="button" class="tips-tab-btn" data-category="gardening">Gardening</button>
+        <button type="button" class="tips-tab-btn" data-category="toilet">Toilet</button>
+        <button type="button" class="tips-tab-btn" data-category="general">Household</button>
+      </div>
+
+      <!-- Tips Cards Grid -->
+      <div class="tips-cards-grid" id="tips-cards-grid">
+        <!-- 1. Bathroom Tip -->
+        <div class="tip-card" data-category="bathroom">
+          <div class="tip-card-tag">
+            <span class="badge badge-primary">Bathroom</span>
+            <span class="tip-card-impact badge-emerald">High Impact</span>
+          </div>
+          <h4 class="tip-card-title">The 5-Minute Shower Challenge</h4>
+          <p class="tip-card-text">
+            Shortening your daily shower from 10 minutes to 5 minutes conserves approximately 47 Litres of water every single day—over 17,000 Litres annually per person.
+          </p>
+        </div>
+
+        <!-- 2. Bathroom Tip -->
+        <div class="tip-card" data-category="bathroom">
+          <div class="tip-card-tag">
+            <span class="badge badge-primary">Bathroom</span>
+            <span class="tip-card-impact badge-emerald">Zero-Cost Habit</span>
+          </div>
+          <h4 class="tip-card-title">Turn Off the Tap While Brushing</h4>
+          <p class="tip-card-text">
+            Letting the faucet run while brushing your teeth wastes roughly 6 Litres per minute. Shutting it off during your two-minute brushing routine saves up to 12 Litres each session.
+          </p>
+        </div>
+
+        <!-- 3. Kitchen Tip -->
+        <div class="tip-card" data-category="kitchen">
+          <div class="tip-card-tag">
+            <span class="badge badge-primary">Kitchen</span>
+            <span class="tip-card-impact badge-emerald">High Impact</span>
+          </div>
+          <h4 class="tip-card-title">Two-Basin Dishwashing Method</h4>
+          <p class="tip-card-text">
+            Instead of letting the tap run continuously, fill one basin or bowl with soapy water for washing and another with clean water for rinsing, saving over 40 Litres per day.
+          </p>
+        </div>
+
+        <!-- 4. Laundry Tip -->
+        <div class="tip-card" data-category="laundry">
+          <div class="tip-card-tag">
+            <span class="badge badge-primary">Laundry</span>
+            <span class="tip-card-impact badge-emerald">Medium Impact</span>
+          </div>
+          <h4 class="tip-card-title">Consolidate to Full Loads</h4>
+          <p class="tip-card-text">
+            Washing machines consume approximately 50 Litres of water per cycle regardless of fullness. Running only full loads cuts weekly water and electricity consumption by 25%–30%.
+          </p>
+        </div>
+
+        <!-- 5. Gardening Tip -->
+        <div class="tip-card" data-category="gardening">
+          <div class="tip-card-tag">
+            <span class="badge badge-primary">Gardening</span>
+            <span class="tip-card-impact badge-emerald">High Impact</span>
+          </div>
+          <h4 class="tip-card-title">Water Plants at Dawn or Dusk</h4>
+          <p class="tip-card-text">
+            Watering during peak daytime heat results in up to 40% loss to solar evaporation. Watering in early morning or late evening ensures deep soil moisture absorption.
+          </p>
+        </div>
+
+        <!-- 6. Toilet Tip -->
+        <div class="tip-card" data-category="toilet">
+          <div class="tip-card-tag">
+            <span class="badge badge-primary">Toilet</span>
+            <span class="tip-card-impact badge-emerald">Medium Impact</span>
+          </div>
+          <h4 class="tip-card-title">Cistern Displacement Bottle</h4>
+          <p class="tip-card-text">
+            For older single-flush toilets (9L), placing a sealed 1-litre plastic bottle filled with sand inside the cistern displaces 1 Litre per flush, saving 1,800+ Litres yearly.
+          </p>
+        </div>
+
+        <!-- 7. General Tip -->
+        <div class="tip-card" data-category="general">
+          <div class="tip-card-tag">
+            <span class="badge badge-primary">Household</span>
+            <span class="tip-card-impact badge-emerald">Critical Impact</span>
+          </div>
+          <h4 class="tip-card-title">Perform Overnight Leak Audits</h4>
+          <p class="tip-card-text">
+            Read your household water meter before retiring to bed when no water fixtures are operating. If the meter reading advances by morning, a hidden plumbing leak exists.
+          </p>
+        </div>
+
+        <!-- 8. Kitchen Tip -->
+        <div class="tip-card" data-category="kitchen">
+          <div class="tip-card-tag">
+            <span class="badge badge-primary">Kitchen</span>
+            <span class="tip-card-impact badge-emerald">Greywater Reuse</span>
+          </div>
+          <h4 class="tip-card-title">Reuse Produce Rinsing Water</h4>
+          <p class="tip-card-text">
+            Rinse vegetables and fruits in a large bowl instead of under a running stream. The captured greywater is chemical-free and ideal for watering indoor or balcony plants.
+          </p>
+        </div>
+
+        <!-- 9. Gardening Tip -->
+        <div class="tip-card" data-category="gardening">
+          <div class="tip-card-tag">
+            <span class="badge badge-primary">Gardening</span>
+            <span class="tip-card-impact badge-emerald">Soil Moisture</span>
+          </div>
+          <h4 class="tip-card-title">Apply Organic Mulch to Garden Beds</h4>
+          <p class="tip-card-text">
+            Adding a 2-inch layer of organic mulch (wood chips, leaves, or compost) around plants reduces soil evaporation by 70% and suppresses moisture-competing weeds.
+          </p>
+        </div>
+      </div>
+
+      <!-- Factual "Did You Know?" Section -->
+      <h3 class="facts-title">Did You Know? Environmental Water Facts</h3>
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-icon">01</div>
+          <div>
+            <h4>Only 0.5% Freshwater is Accessible</h4>
+            <p>While water covers 71% of Earth's surface, 97% is saline ocean water and over 2% is locked in glaciers. Less than 0.5% is available as accessible freshwater.</p>
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">02</div>
+          <div>
+            <h4>A Slow Drip Wastes 9,000+ Litres</h4>
+            <p>A tap leaking at just one drop per second wastes roughly 25 Litres of treated municipal water each day, accumulating to over 9,000 Litres in a single year.</p>
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">03</div>
+          <div>
+            <h4>Water & Energy Nexus</h4>
+            <p>Pumping, treating, heating, and filtering household water consumes significant electrical energy. Conserving hot water directly slashes household greenhouse gas emissions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================================================
+       9. ABOUT PROJECT SECTION
+       ============================================================================== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-card">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="badge badge-primary section-tag">Academic Information</span>
+          <h2 class="section-title">About Project: AquaSave</h2>
+          <p class="section-subtitle">
+            Water Conservation Recommendation System | Functional Working Prototype
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-col">
+            <h3>Problem Statement & Context</h3>
+            <p>
+              Freshwater scarcity is recognized by the United Nations as one of the defining environmental crises of the 21st century. Rapid urbanization and unsustainable domestic consumption place extreme strain on municipal water reservoirs and depleting groundwater aquifers. Many households remain unaware of the specific fixtures contributing most heavily to their water waste due to lack of itemized consumption visibility.
+            </p>
+          </div>
+
+          <div class="about-col">
+            <h3>The AquaSave Solution</h3>
+            <p>
+              AquaSave is an interactive, client-side web application designed to eliminate this awareness deficit. By decomposing household water usage into distinct activity modules, AquaSave calculates accurate consumption estimates, pinpoints the primary water-consuming fixture, and dynamically calculates customized conservation interventions with quantified volumetric savings.
+            </p>
+          </div>
+
+          <div class="about-col">
+            <h3>Technical Implementation</h3>
+            <p>
+              Engineered using pure <strong>HTML5, Vanilla CSS3, and JavaScript (ES6+)</strong> with zero external third-party script dependencies. All calculations, dynamic SVG chart renderings, what-if simulations, and persistent progress logging (via browser <code>localStorage</code>) operate entirely client-side, ensuring complete offline availability and data privacy.
+            </p>
+          </div>
+
+          <div class="about-col">
+            <h3>Environmental Studies Objectives</h3>
+            <p>
+              1. Quantify individual domestic water footprints against per-capita benchmarks.<br />
+              2. Promote zero-cost habit changes and low-cost hardware retrofits.<br />
+              3. Illustrate the water-energy nexus through interactive what-if simulation.<br />
+              4. Deliver an engaging, presentation-ready working prototype for academic evaluation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Transparent Mathematical Model Table for College Presentation -->
+        <div class="assumptions-table-wrap">
+          <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 1rem;">
+            Transparent Calculation Model & Scientific Assumptions
+          </h4>
+          <table class="assumptions-table">
+            <thead>
+              <tr>
+                <th>Activity / Fixture</th>
+                <th>Standard Flow / Volume</th>
+                <th>Conserving / Eco Alternative</th>
+                <th>Standard Reference Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Showering</td>
+                <td>9.5 Litres / minute</td>
+                <td>6.0 Litres / minute (aerated head)</td>
+                <td>EPA WaterSense & CPCB Standards</td>
+              </tr>
+              <tr>
+                <td>Bathroom Basin Tap</td>
+                <td>6.0 Litres / minute (~1.5L / session)</td>
+                <td>Turning off during soaping/brushing</td>
+                <td>WHO Domestic Water Benchmarks</td>
+              </tr>
+              <tr>
+                <td>Toilet Flushing</td>
+                <td>9.0 Litres / flush (single)</td>
+                <td>4.5 Litres / flush (dual flush)</td>
+                <td>Bureau of Indian Standards (BIS)</td>
+              </tr>
+              <tr>
+                <td>Kitchen Dishwashing</td>
+                <td>60.0 Litres / day (running tap)</td>
+                <td>20.0 Litres / day (two-basin soaking)</td>
+                <td>Environmental Studies Case Data</td>
+              </tr>
+              <tr>
+                <td>Laundry Machine</td>
+                <td>50.0 Litres / cycle</td>
+                <td>Full loads & cold eco cycles</td>
+                <td>Residential Energy Star Benchmarks</td>
+              </tr>
+              <tr>
+                <td>Garden Watering</td>
+                <td>45.0 Litres / session (open hose)</td>
+                <td>12.0 Litres / session (watering can)</td>
+                <td>Irrigation Efficiency Research</td>
+              </tr>
+              <tr>
+                <td>Car Washing</td>
+                <td>120.0 Litres / wash (running hose)</td>
+                <td>30.0 Litres / wash (bucket & sponge)</td>
+                <td>Municipal Conservation Guidelines</td>
+              </tr>
+              <tr>
+                <td>Plumbing Leaks</td>
+                <td>25.0 Litres / day (dripping faucet)</td>
+                <td>0.0 Litres / day (washer repaired)</td>
+                <td>American Water Works Association</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Academic Info Banner -->
+        <div class="academic-meta-box">
+          <div class="academic-meta-left">
+            <h4>AquaSave – Water Conservation Project</h4>
+            <p>Water Conservation Recommendation System | Prototype Status: Production-Ready</p>
+          </div>
+          <div>
+            <span class="badge badge-emerald" style="background: rgba(255,255,255,0.2); color: #ffffff; border: 1px solid rgba(255,255,255,0.3);">
+              Academic Prototype ✓
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================================================
+       FOOTER
+       ============================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span>AQUA SAVE</span>
+        </div>
+
+        <p style="max-width: 480px; font-size: 0.88rem; font-weight: 300; color: #999999;">
+          AquaSave empowers everyday citizens to understand, track, and conserve our most vital resource.
+        </p>
+
+        <div>
+          <a href="#home" class="btn btn-outline-pill btn-sm" style="color: #ffffff; border-color: #444444;">
+            <span>↑ Back to Top</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        &copy; 2026 AQUA SAVE – Water Conservation Recommendation System.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Application Scripts -->
+  <script src="js/calculations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
